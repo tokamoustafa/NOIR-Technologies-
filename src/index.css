@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-noir-pure: #050505;
+  --color-noir-deep: #0A0A0A;
+  --color-noir-surface: #121212;
+  --color-noir-surface-hover: #1A1A1A;
+  --color-noir-border: #221214;
+  --color-crimson-dark: #450000;
+  --color-crimson-blood: #8B0000;
+  --color-crimson-neon: #FF1E2D;
+  --color-crimson-glow: rgba(255, 30, 45, 0.45);
+  --color-noir-white: #F5F5F5;
+  --color-noir-gray-light: #B5B5B5;
+  --color-noir-gray-muted: #737373;
+  --color-noir-gray-dark: #2B2B2B;
+
+  --font-display: "Syne", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-arabic: "Cairo", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #050505;
+    color: #F5F5F5;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  [dir="rtl"] body,
+  [dir="rtl"] {
+    font-family: var(--font-arabic), var(--font-sans);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] .font-display {
+    font-family: var(--font-arabic), var(--font-display);
+    letter-spacing: normal;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2B0a0c;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B0000;
+}
+
+/* Ambient glow and red effects */
+.glow-red-sm {
+  box-shadow: 0 0 15px rgba(255, 30, 45, 0.2);
+}
+
+.glow-red-md {
+  box-shadow: 0 0 25px rgba(255, 30, 45, 0.35);
+}
+
+.glow-red-lg {
+  box-shadow: 0 0 50px rgba(255, 30, 45, 0.45);
+}
+
+.glow-text-red {
+  text-shadow: 0 0 12px rgba(255, 30, 45, 0.7);
+}
+
+.border-red-glow {
+  border-color: rgba(255, 30, 45, 0.3);
+  box-shadow: inset 0 0 12px rgba(139, 0, 0, 0.15), 0 0 15px rgba(255, 30, 45, 0.1);
+}
+
+/* Subtle futuristic scanline backdrop */
+.scanline-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.3)
+  );
+  background-size: 100% 4px;
+}
